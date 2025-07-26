@@ -1,0 +1,171 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8j11wooan1ca"]
+
+[ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_arsqg"]
+[ext_resource type="Texture2D" uid="uid://deyqsaxbvj1nu" path="res://Assests/Graphics/Gray.png" id="1_y4nye"]
+[ext_resource type="FontFile" uid="uid://dy622tbjyskqr" path="res://Assests/Graphics/sevenet7.ttf" id="2_hwvjs"]
+[ext_resource type="AudioStream" uid="uid://5mlqeyqtuh7b" path="res://Assests/SFX/game-over-arcade-6435.mp3" id="4_lavk8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cj0o"]
+bg_color = Color(0.901961, 0.552941, 0.254902, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ap6bg"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qk5t"]
+bg_color = Color(0.901961, 0.552941, 0.254902, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n75yy"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ylte"]
+bg_color = Color(0, 0, 0, 0.796078)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8ryp"]
+bg_color = Color(0.67047, 0.510829, 0.87223, 0)
+
+[node name="GameOver" type="Node"]
+script = ExtResource("1_arsqg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_y4nye")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -393.0
+offset_top = -66.0
+offset_right = 393.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -10
+theme_override_fonts/font = ExtResource("2_hwvjs")
+theme_override_font_sizes/font_size = 126
+text = "GAME OVER"
+
+[node name="Play again" type="Button" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.5
+offset_top = 66.0
+offset_right = 146.5
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_hwvjs")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/hover = SubResource("StyleBoxFlat_0cj0o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ap6bg")
+text = "Play Again"
+
+[node name="Quit" type="Button" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = 148.0
+offset_right = 255.0
+offset_bottom = 211.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_hwvjs")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/hover = SubResource("StyleBoxFlat_8qk5t")
+theme_override_styles/normal = SubResource("StyleBoxFlat_n75yy")
+text = "Quit"
+
+[node name="Menu" type="Button" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = 147.0
+offset_right = -13.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_hwvjs")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/hover = SubResource("StyleBoxFlat_8qk5t")
+theme_override_styles/normal = SubResource("StyleBoxFlat_n75yy")
+text = "Menu"
+
+[node name="Error" type="Label" parent="TextureRect"]
+visible = false
+layout_mode = 0
+offset_left = 22.0
+offset_top = 20.0
+offset_right = 326.0
+offset_bottom = 71.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ylte")
+horizontal_alignment = 2
+
+[node name="TextEdit" type="TextEdit" parent="TextureRect/Error"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0756579
+anchor_top = 0.215686
+anchor_right = 1.06908
+anchor_bottom = 0.794634
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.976471, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_hwvjs")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_v8ryp")
+text = "Error: Reload game"
+metadata/_edit_use_anchors_ = true
+
+[node name="game over sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_lavk8")
+
+[connection signal="pressed" from="TextureRect/Play again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="TextureRect/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="TextureRect/Menu" to="." method="_on_menu_pressed"]

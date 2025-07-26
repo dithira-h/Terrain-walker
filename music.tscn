@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8uy0dottdqjk"]
+
+[ext_resource type="AudioStream" uid="uid://tm5ufrsfwej5" path="res://Assests/SFX/moonshine-prigida-main-version-01-36-17027.mp3" id="1_g6s5h"]
+
+[sub_resource type="GDScript" id="GDScript_jsbhg"]
+script/source = "extends AudioStreamPlayer2D
+
+func _ready():
+	if not playing:
+		play()
+"
+
+[node name="Music" type="Node"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_g6s5h")
+autoplay = true
+max_distance = 10000.0
+attenuation = 3.70942e-05
+script = SubResource("GDScript_jsbhg")
